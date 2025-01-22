@@ -350,6 +350,48 @@ Common issues and solutions:
   - Validate bucket region
 
 ---
+## Challenges and Solutions
+
+### Lambda Challenges
+1. **Cold Start Latency**  
+   - **Challenge**: High latency during the initialization of Lambda functions.  
+   - **Solution**: Enabled provisioned concurrency for critical functions and utilized warm-up strategies to minimize delays.
+
+2. **Timeout Limitation**  
+   - **Challenge**: Lambda functions are limited to 15-minute execution time.  
+   - **Solution**: Adopted asynchronous processing using SQS and integrated Step Functions for orchestrating long-running tasks.
+
+3. **Memory Constraints**  
+   - **Challenge**: Limited memory capacity (10GB max).  
+   - **Solution**: Optimized memory utilization through efficient dependency management and resource cleanup.
+
+### Foundation Model Challenges
+1. **Variable Response Times**  
+   - **Challenge**: Foundation models exhibited inconsistent response times.  
+   - **Solution**: Implemented retry mechanisms with exponential backoff to handle delays effectively.
+
+2. **Token Limitations**  
+   - **Challenge**: Models had constraints on input/output token sizes.  
+   - **Solution**: Managed token limits by splitting large inputs into smaller chunks and ensuring seamless processing.
+
+### API Gateway Challenges
+1. **Hard Timeout**  
+   - **Challenge**: API Gateway imposes a 29-second timeout for requests.  
+   - **Solution**: Shifted to asynchronous processing with status checks to ensure timely responses.
+
+2. **Request/Response Size Limits**  
+   - **Challenge**: API Gateway has a 10MB payload limit.  
+   - **Solution**: Utilized S3 for handling large payloads and implemented chunked uploads for seamless data transfer.
+
+### Scaling Challenges
+1. **Concurrent Request Management**  
+   - **Challenge**: Handling high volumes of concurrent requests efficiently.  
+   - **Solution**: Implemented rate-limiting strategies and leveraged queuing systems like SQS to manage traffic bursts.
+
+---
+
+
+
 ## Future Enhancements
 
 - Add fine-tuning capabilities for foundation models.
