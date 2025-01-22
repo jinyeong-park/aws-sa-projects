@@ -13,6 +13,7 @@ Welcome to the Generative AI Project repository! This project demonstrates how t
 - [Demo](#demo)
 - [AWS Generative AI Implementation Guide](#aws-generative-ai-implementation-guide)
 - [Future Enhancements](#future-enhancements)
+- [Challenges](#challenges-and-solutions)
 - [Contributing](#contributing)
 
 
@@ -399,5 +400,7 @@ Common issues and solutions:
 - Enhance user interface for seamless client interaction.
 
 ## Contributing
+
 Feel free to submit issues and enhancement requests.
+
 ---
