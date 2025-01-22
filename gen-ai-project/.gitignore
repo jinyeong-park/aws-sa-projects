@@ -46,4 +46,4 @@ coverage/
 *.lcov
 
 # Exclude Python folder
-python/
+/python/
